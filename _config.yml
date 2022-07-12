@@ -1,0 +1,9 @@
+name: "Иван Бущик"
+url: https://ivabus.dev
+description: "ivabus"
+
+permalink: /:year/:month/:day/:title/
+paginate: 10
+
+gems: [jekyll-paginate]
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']

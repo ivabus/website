@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width">
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="/assets/css/style.css" rel="stylesheet" />
+  <link href="/assets/css/colors-dark.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+
+
+  <header id="header">
+    <a href="/"><h1>{{ site.name }}</h1></a>
+    <p>{{ site.description }}</p>
+  </header>
+
+
+
+  <div id="page">
+    <div id="sidebar">
+      <nav>
+        <ul>
+          <li><a href="/">Главная</a></li>
+          <li><a href="https://github.com/ivabus">GitHub</a></li>
+          <li><a href="https://gitlab.com/ivabus">GitLab</a></li>
+          <li><a href="mailto:ivabus@ivabus.dev">Email</a></li>
+          <li><a href="https://matrix.to/#/@ivabus:matrix.org">Matrix</a></li>
+          <li><a href="https://vk.com/ivabus">VK</a></li>
+          <li><a href="https://boosty.to/ivabus">boosty.to</a></li>
+          <li><a href="/feed.xml">RSS Поток</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    {% include about.html %}
+
+    <div id="content">
+      {{ content }}
+    </div>
+    <h1 style="font-size: 32px; margin-bottom: 4px;">Блог</h1>
+    <div id="blog-archives">
+      {% for post in site.posts %}
+        <article class="post">
+          {% if post.external-url %}
+            <h1>
+              <a href="{{ post.external-url }}">{{ post.title }}</a> 
+              <a class="anchor" href="{{ post.url }}"><i class="icon-anchor"></i></a>
+            </h1>
+          {% else %}
+            <h1><a href="{{ post.url }}">{{ post.date | date: "%d.%m.%Y" }} {{ post.title }}</a></h1>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+
+  
+
+  <footer id="footer">
+    <details>
+      <summary>GPG key info</summary>
+      <br>
+      <p>Key ID: <code>3E4E9C7D66E44BF7</code><br>
+      Fingerprint: <code>77F2 CF96 4D0A 9F5B A3DE 3D31 3E4E 9C7D 66E4 4BF7</code></p>
+      <ul>
+      <li><a href="https://keyserver.ubuntu.com/pks/lookup?op=vindex&search=0x3e4e9c7d66e44bf7">Ubuntu keyserver</a></li>
+      <li><a href="https://keys.openpgp.org/vks/v1/by-fingerprint/77F2CF964D0A9F5BA3DE3D313E4E9C7D66E44BF7">OpenPGP keyserver</a></li>
+      </ul>
+    </details>
+    <br>
+    <p class="copyright">Copyright &copy; {{ site.time | date: '%Y' }} {{ site.name }}. Powered by <a href="http://jekyllrb.com">Jekyll</a> and <a href="https://gitlab.com">GitLab</a></p>
+  </footer>
+
+
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="/assets/js/jquery.mobilemenu.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $('#sidebar nav ul').mobileMenu({'topOptionText': 'Menu', 'prependTo': '#sidebar nav'});
+    });
+  </script>
+
+
+
+</body>
+</html>
