@@ -1,9 +1,16 @@
 name: "Иван Бущик"
 url: https://ivabus.dev
 description: "ivabus"
+lang: ru-RU
+timezone: Europe/Moscow
 
-permalink: /:year/:month/:day/:title/
+
+permalink: "/:year/:month/:day/:title/"
 paginate: 10
 
-gems: [jekyll-paginate]
-exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile', 'LICENSE']
+
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
