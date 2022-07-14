@@ -257,12 +257,12 @@ html, body {
 
 a, a:visited, a:active {
 	color: #2aa198;
-	border-color: #073642;
+	border-color: #002a35;
 }
 
 a:hover {
-	background-color: #073642;
-	border-color: #073642;
+	background-color: #002a35;
+	border-color: #002a35;
 	color: #b58900;
 }
 
@@ -275,8 +275,8 @@ h1 a, h1 a:visited, h1 a:active {
 }
 
 h1 a:hover {
-	background-color: #073642;
-	border-color: #073642;
+	background-color: #002a35;
+	border-color: #002a35;
 	color: #cb4b16;
 }
 
@@ -290,18 +290,18 @@ blockquote {
 
 #sidebar a:hover {
 	color: #b58900;
-	background-color: #073642;
+	background-color: #002a35;
 }
 
 #footer {
-	border-color: #073642;
+	border-color: #002a35;
 }
 
 
 
 /*** Pygments ***/
 .highlight{
-	background-color: #073642;
+	background-color: #002a35;
 	color: #93a1a1;
 	border: 1px solid #2d6472;
     border-radius: 3px 3px 3px 3px;
